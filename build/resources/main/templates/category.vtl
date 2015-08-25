@@ -1,10 +1,18 @@
-<h3>Here are all the tasks in this category:</h3>
+<h2>Add a task in $category.getName():</h2>
 
-#foreach($task in $category.getTasks())
- <h3>$task.getDescription()</a></h3>
-#end
 
-<hr/>
-<a href="/categories/$category.getId()/tasks/new">Add a new task</a>
-<br>
-<a href="/">Return to Main Page</a>
+  <form action="/tasks" method="post">
+    <input id="categoryId" name="categoryId" type="hidden" value="$category.getId()">
+    <label for="description">Task description</label>
+    <input id="description" name="description" type="text">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+
+  <ol>
+    #foreach ($task in $category.getTasks())
+      </li>$task.getDescription()</li>
+    #end
+  </ol>
+
+
+  <a href="/">Go back!</a><br>

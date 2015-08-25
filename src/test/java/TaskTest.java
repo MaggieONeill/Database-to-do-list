@@ -1,5 +1,6 @@
 import org.junit.*;
 import static org.junit.Assert.*;
+import org.junit.Rule;
 
 public class TaskTest {
 
@@ -10,35 +11,29 @@ public class TaskTest {
   public void all_emptyAtFirst() {
     assertEquals(Task.all().size(), 0);
   }
-  //
-  // @Test
-  // public void equals_returnsTrueIfDescriptionsAretheSame() {
-  //   Task firstTask = new Task("Mow the lawn");
-  //   Task secondTask = new Task("Mow the lawn");
-  //   assertTrue(firstTask.equals(secondTask));
-  // }
-  //
-  // @Test
-  // public void save_returnsTrueIfDescriptionsAretheSame() {
-  //   Task myTask = new Task("Mow the lawn");
-  //   myTask.save();
-  //   assertTrue(Task.all().get(0).equals(myTask));
-  // }
-  //
-  // @Test
-  // public void save_assignsIdToObject() {
-  //   Task myTask = new Task("Mow the lawn");
-  //   myTask.save();
-  //   Task savedTask = Task.all().get(0);
-  //   assertEquals(myTask.getId(), savedTask.getId());
-  // }
+
+  @Test
+  public void equals_returnsFalseIfDescriptionsAretheSame() {
+    Task firstTask = new Task("Mow the lawn", 2);
+    Task secondTask = new Task("Mow the lawn", 1);
+    assertTrue(!firstTask.equals(secondTask));
+  }
+
+  @Test
+  public void save_returnsTrueIfDescriptionsAretheSame() {
+    Task myTask = new Task("Mow the lawn", 1);
+    myTask.save();
+    assertTrue(Task.all().get(0).equals(myTask));
+  }
 
 
-  // @Test
-  // public void all_savesIntoDatabase_true() {
-  //   Task myTask = new Task("Mow the lawn", 1);
-  //   assertEquals(Task.all().get(0).getDescription(), "Mow the lawn");
-  // }
+  @Test
+  public void save_assignsIdToObject() {
+      Task myTask = new Task("Mow the lawn", 1);
+      myTask.save();
+      Task savedTask = Task.all().get(0);
+      assertEquals(myTask.getId(), savedTask.getId());
+ }
 
   @Test
   public void find_findsTaskInDatabase_true() {

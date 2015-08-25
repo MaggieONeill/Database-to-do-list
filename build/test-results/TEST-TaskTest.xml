@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TaskTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2015-08-24T22:07:58" hostname="epicodus-110.local" time="0.041">
+<testsuite name="TaskTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-08-25T23:07:28" hostname="epicodus-103.local" time="0.075">
   <properties/>
-  <testcase name="save_savesCategoryIdIntoDB_true" classname="TaskTest" time="0.02"/>
+  <testcase name="save_returnsTrueIfDescriptionsAretheSame" classname="TaskTest" time="0.015"/>
+  <testcase name="equals_returnsFalseIfDescriptionsAretheSame" classname="TaskTest" time="0.005"/>
+  <testcase name="save_savesCategoryIdIntoDB_true" classname="TaskTest" time="0.018"/>
   <testcase name="all_emptyAtFirst" classname="TaskTest" time="0.008"/>
-  <testcase name="find_findsTaskInDatabase_true" classname="TaskTest" time="0.013"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="save_assignsIdToObject" classname="TaskTest" time="0.013"/>
+  <testcase name="find_findsTaskInDatabase_true" classname="TaskTest" time="0.014"/>
+  <system-out><![CDATA[1
+1
+2
+1
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
